@@ -1,0 +1,10 @@
+.container-fluid{
+    display: flex;
+    justify-content: center;
+}
+
+nav div span{
+    font-size: 1.7rem;
+}
+
+
