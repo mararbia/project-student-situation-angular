@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class FormComponent {
 
-  datas = [{ name: 'Mara', grade1: 2, grade2: 4, situation: 'Reprovado' }];
+  datas = [{ name: '', grade1: '', grade2: '', situation: '' }];
 
   modelInsert: any = {};
   modelUpdate: any = {};

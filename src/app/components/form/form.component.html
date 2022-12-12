@@ -36,9 +36,11 @@
                         <td>{{ data.grade1 }}</td>
                         <td>{{ data.grade2}}</td>
                         <td >{{ data.situation }}</td>
-                        <td class="buttons">
-                            <button type="button" class="btn btn-primary" (click) = "edit(i)">Editar</button>
-                            <button type="button" class="btn btn-danger" (click) = "delete(i)">Deletar</button>
+                        <td>
+                            <span class="buttons" *ngIf="data.situation != '' ">
+                              <button type="button" class="btn btn-primary" (click) = "edit(i)">Editar</button>
+                              <button type="button" class="btn btn-danger" (click) = "delete(i)">Deletar</button>
+                            </span>
                         </td>
                     </tr>
                 </tbody>
