@@ -2,25 +2,47 @@
     <form>
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Digite o nome do aluno">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Digite o nome do aluno" [(ngModel)]="modelInsert.name">
         </div>
 
         <div class="mb-3">
             <label for="grade1" class="form-label">Nota 01</label>
             <input type="number" class="form-control" id="grade1" name="grade1"
-                placeholder="Digite a primeira nota do aluno">
+                placeholder="Digite a primeira nota do aluno" [(ngModel)]="modelInsert.grade1">
         </div>
 
         <div class="mb-3">
             <label for="grade2" class="form-label">Nota 02</label>
             <input type="number" class="form-control" id="grade2" name="grade2"
-                placeholder="Digite a segunda nota do aluno">
+                placeholder="Digite a segunda nota do aluno" [(ngModel)]="modelInsert.grade2">
         </div>
-        <button type="button" class="btn btn-success">Salvar</button>
+        <button type="button" class="btn btn-success" (click) = "addData()">Salvar</button>
 
         <div class="table">
-            <h2>Situação do Aluno</h2>
-            <app-table></app-table>
+            <h2>Atualizar e Deletar dados do Aluno</h2>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Nota 01</th>
+                        <th scope="col">Nota 02</th>
+                        <th scope="col">Situação</th>
+                        <th scope="col">Ação</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let data of datas; let i = index">
+                        <td>{{ data.name }}</td>
+                        <td>{{ data.grade1 }}</td>
+                        <td>{{ data.grade2}}</td>
+                        <td >{{ data.situation }}</td>
+                        <td class="buttons">
+                            <button type="button" class="btn btn-primary" (click) = "edit(i)">Editar</button>
+                            <button type="button" class="btn btn-danger" (click) = "delete(i)">Deletar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
 
@@ -33,20 +55,20 @@
     <form>
         <div class="mb-3">
             <label for="name" class="form-label">Nome</label>
-            <input type="text" class="form-control" id="name" name="name" placeholder="Digite o nome do aluno">
+            <input type="text" class="form-control" id="name" name="name" [(ngModel)]="modelUpdate.name">
         </div>
 
         <div class="mb-3">
             <label for="grade1" class="form-label">Nota 01</label>
             <input type="number" class="form-control" id="grade1" name="grade1"
-                placeholder="Digite a primeira nota do aluno">
+                [(ngModel)] = "modelUpdate.grade1">
         </div>
 
         <div class="mb-3">
             <label for="grade2" class="form-label">Nota 02</label>
             <input type="number" class="form-control" id="grade2" name="grade2"
-                placeholder="Digite a segunda nota do aluno">
+                [(ngModel)] = "modelUpdate.grade2">
         </div>
-        <button type="button" class="btn btn-success">Atualizar</button>
+        <button type="button" class="btn btn-success" (click)="updateData()">Atualizar</button>
     </form>
 </div>

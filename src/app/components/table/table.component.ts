@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output } from '@angular/core';
 
 @Component({
   selector: 'app-table',
@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent {
-
+  @Output() datas = [
+    {name: "", grade1: 0, grade2: 0}
+  ];
 }

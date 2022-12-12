@@ -3,3 +3,17 @@ h2{
     text-align: center;
     color: rgb(10, 10, 155);
 }
+
+th, td{
+    text-align: center;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.btn-success{
+    margin-bottom: 30px;
+}
+
